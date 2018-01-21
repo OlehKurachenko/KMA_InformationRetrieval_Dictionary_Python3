@@ -1,5 +1,5 @@
 """
-    Simplest file tokenizer
+Simplest file tokenizer
 """
 
 from re import split
@@ -13,7 +13,7 @@ class TestFileSimplestTokenizer:
             for line in file:
                 strsplit = split("[ .,!?:;\"']+", line)
                 for token in strsplit:
-                    if (token):
+                    if token:
                         yield token.lower()
 
     def __init__(self, filename):

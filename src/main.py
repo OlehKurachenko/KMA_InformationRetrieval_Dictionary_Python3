@@ -1,5 +1,4 @@
-from src import textFileSimplestTokenizer
-
+from src import textFileSimplestTokenizer, simplestArrayDictionary
 
 def main():
     print("Test")
@@ -21,9 +20,14 @@ def main():
     # for i in range(9):
     #     print(lazy.__next__())
 
-    li = textFileSimplestTokenizer.TestFileSimplestTokenizer("Data/lorem_ipsum_short.txt")
-    for word in li.token_generator:
-        print("Word: [" + word + ']')
+    arrayDictionary = simplestArrayDictionary.SimplestArrayDictionary()
+    try:
+        li = textFileSimplestTokenizer.TestFileSimplestTokenizer("Data/lorem_ipsum_short.txt")
+        for word in li.token_generator:
+            arrayDictionary.add_word(word)
+        print(arrayDictionary.__str__())
+    except FileNotFoundError:
+        print("File not opened")
 
     print("End of test")
 
