@@ -11,7 +11,7 @@ class TestFileSimplestTokenizer:
     def __lazy_line_generator(filename):
         with open(filename) as file:
             for line in file:
-                strsplit = split("[ .,!?:;\"']+", line)
+                strsplit = split("[ .,!?:;\"'\t\r\n\v\f]+", line)
                 for token in strsplit:
                     if token:
                         yield token.lower()
