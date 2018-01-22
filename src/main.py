@@ -1,6 +1,7 @@
 from src import text_file_simplest_tokenizer, simplest_array_dictionary, simplest_set_dictionary
 import glob
 
+
 def main():
     array_dictionary = simplest_array_dictionary.SimplestArrayDictionary()
     set_dictionary = simplest_set_dictionary.SimplestSetDictionary()
