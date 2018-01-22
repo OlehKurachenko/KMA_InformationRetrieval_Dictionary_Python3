@@ -1,0 +1,3 @@
+[submodule "DicData"]
+	path = DicData
+	url = https://github.com/OlehKurachenko/KMA_InformationRetrieval_Dictionary_Data.git
