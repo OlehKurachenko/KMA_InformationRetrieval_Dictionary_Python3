@@ -1,4 +1,5 @@
-from src import text_file_simplest_tokenizer, simplest_array_dictionary, simplest_set_dictionary
+from src.dictionaries import simplest_array_dictionary, simplest_set_dictionary
+from src.text_file_tokenizers import text_file_simplest_tokenizer
 import glob
 
 
