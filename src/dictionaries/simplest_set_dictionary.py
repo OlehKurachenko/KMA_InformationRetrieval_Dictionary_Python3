@@ -1,11 +1,11 @@
-"""
-Simplest Array Dictionary
-"""
-
-
-class SimplestSetDictionary:
+from src.dictionaries.abc_simplest_dictionary import ABCSimplestDictionary
+class SimplestSetDictionary(ABCSimplestDictionary):
+    """
+    Stores distinct words in set
+    """
 
     def __init__(self, filename=""):
+        super().__init__()
         self.words = set()
         if filename:
             importfile = open(filename)
