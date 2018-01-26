@@ -7,7 +7,7 @@ def main():
     array_dictionary = simplest_array_dictionary.SimplestArrayDictionary()
     set_dictionary = simplest_set_dictionary.SimplestSetDictionary()
     try:
-        for filename in glob.glob('Data/Egmont.txt'):
+        for filename in glob.glob('DicData/Books/*.txt'):
             fst = text_file_simplest_tokenizer.TestFileSimplestTokenizer(filename)
             for word in fst.token_generator:
                 array_dictionary.add_word(word)
