@@ -42,6 +42,8 @@ class CLIMain:
 
     """
 
+    # TODO check type asserts
+
     __target = []
     __output = ""
     __input = ""
@@ -127,6 +129,7 @@ class CLIMain:
             try:
                 if CLIMain.__printTraces:
                     print(sys.argv[0] + ": reading and adding \"" + filename + "\"...")
+                    # TODO simplify using add_words
                 tfst = TestFileSimplestTokenizer(filename)
                 for word in tfst.token_generator:
                     dictionary.add_word(word)
