@@ -8,15 +8,15 @@ class ABCSimplestDictionary(abc.ABC):
     """
 
     @abc.abstractmethod
-    def __init__(self, filename=""):
-        pass
-
-    @abc.abstractmethod
     def add_word(self, word):
         pass
 
     @abc.abstractmethod
     def export_dictionary(self, filename):
+        pass
+
+    @abc.abstractmethod
+    def get_words(self):
         pass
 
     @abc.abstractmethod

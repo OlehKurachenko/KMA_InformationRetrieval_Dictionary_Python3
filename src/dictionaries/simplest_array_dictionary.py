@@ -7,9 +7,9 @@ class SimplestArrayDictionary(ABCSimplestDictionary):
     """
 
     def __init__(self, filename=""):
-        super().__init__()
         self.words = []
         if filename:
+            # TODO protect from wrong file
             importfile = open(filename)
             length = int(importfile.readline().split(":")[1])
             for i in range(length):
@@ -26,6 +26,9 @@ class SimplestArrayDictionary(ABCSimplestDictionary):
         for word in self.words:
             exportfile.write(word + '\n')
         exportfile.close()
+
+    def get_words(self):
+        return tuple(self.words)
 
     def __str__(self):
         res = "Words: {"
