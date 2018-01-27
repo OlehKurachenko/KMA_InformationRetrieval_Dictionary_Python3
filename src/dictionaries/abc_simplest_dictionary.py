@@ -12,6 +12,10 @@ class ABCSimplestDictionary(abc.ABC):
         pass
 
     @abc.abstractmethod
+    def add_words(self, words):
+        pass
+
+    @abc.abstractmethod
     def export_dictionary(self, filename):
         pass
 
@@ -22,3 +26,5 @@ class ABCSimplestDictionary(abc.ABC):
     @abc.abstractmethod
     def __str__(self):
         pass
+
+    WRONG_ARGUMENT_TYPE_MESSAGE = "Wrong argument type"
