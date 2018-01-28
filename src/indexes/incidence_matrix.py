@@ -4,7 +4,6 @@ from src.text_file_tokenizers.text_file_simplest_tokenizer import TestFileSimple
 
 class IncidenceMatrix(ABSBinarySearcher):
     # TODO write documentation
-    # TODO for all the project, split opening and reading (or not)
 
     def __init__(self, target_files):
         # assert type(use_array == bool), IncidenceMatrix.__WRONG_ARGUMENT_TYPE

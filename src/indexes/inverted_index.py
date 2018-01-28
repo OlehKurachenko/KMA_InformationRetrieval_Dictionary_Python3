@@ -3,6 +3,7 @@ from src.text_file_tokenizers.text_file_simplest_tokenizer import TestFileSimple
 
 
 class InvertedIndex(ABSBinarySearcher):
+    # TODO write documentation
 
     def __init__(self, target_files):
         self.__inverted_index = {}
