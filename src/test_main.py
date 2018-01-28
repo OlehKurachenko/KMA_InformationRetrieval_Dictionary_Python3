@@ -11,6 +11,8 @@ def main():
     ii = InvertedIndex(a)
     ii.export("data/ii.txt")
 
+    print(ii.perform_request("d or ( a and c )"))
+
 
 if __name__ == "__main__":
     main()
