@@ -1,12 +1,10 @@
+from src.indexes.incidence_matrix import IncidenceMatrix
 import glob
 
-import sys
-
-from src.cli.cli_main import CLIMain
-
-
 def main():
-    CLIMain.main()
+    a = list(glob.glob("DicData/*/*"))
+    im = IncidenceMatrix(a)
+    im.export("data/im2.txt")
 
 
 if __name__ == "__main__":
