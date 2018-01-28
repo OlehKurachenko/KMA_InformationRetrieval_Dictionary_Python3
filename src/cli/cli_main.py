@@ -73,6 +73,7 @@ class CLIMain:
                                                             "[-o out_filename] "
                                                             "[arguments]")
             print(sys.argv[0] + ": use " + sys.argv[0] + " --help")
+            return
         if not CLIMain.__handle_command(sys.argv):
             return
         i = 1
