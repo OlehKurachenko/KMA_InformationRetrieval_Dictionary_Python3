@@ -11,7 +11,7 @@ class IncidenceMatrix(ABSBinarySearcher):
 
         self.__incident_matrix = {}
         if type(target_files) == list:
-            self.__files = target_files
+            self.__files = list(target_files)
             for i, file in enumerate(target_files):
                 words_gen = TestFileSimplestTokenizer(file).token_generator
                 for word in words_gen:
