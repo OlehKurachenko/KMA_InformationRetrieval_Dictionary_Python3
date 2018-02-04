@@ -13,6 +13,8 @@
 from src.indexes.abs_binary_searcher import ABSBinarySearcher
 from src.text_file_tokenizers.text_file_simplest_tokenizer import TestFileSimplestTokenizer
 
+from re import split
+
 
 class TwoWordsInvertedIndex(ABSBinarySearcher):
     # TODO make pretty
@@ -20,7 +22,7 @@ class TwoWordsInvertedIndex(ABSBinarySearcher):
 
     def __init__(self, target_files):
         self.__inverted_index = {}
-        prev_word = ()
+        prev_word = ""
         if type(target_files) == list:
             self.__files = list(target_files)
             for i, file in enumerate(target_files):
@@ -57,7 +59,26 @@ class TwoWordsInvertedIndex(ABSBinarySearcher):
     def perform_request(self, request):
         assert type(request) == str, TwoWordsInvertedIndex.__WRONG_ARGUMENT_TYPE
 
-        pass  # TODO write
+        strsplit = split("[ .,!?:;\"'\t\r\n\v\f]+", request)
+        prev_word = ""
+        res = []
+        for i, word in enumerate(strsplit):
+            if i:
+                wordpair = (prev_word, word)
+                if i == 1:
+                    if wordpair in self.__inverted_index.keys():
+                        res = self.__inverted_index[wordpair]
+                    else:
+                        res = []
+                else:
+                    if wordpair in self.__inverted_index.keys():
+                        res = TwoWordsInvertedIndex.lists_intersect(res,
+                                                                self.__inverted_index[wordpair])
+                    else:
+                        res = []
+
+            prev_word = word
+        return res
 
         # request += ' '
         # words_list = []
