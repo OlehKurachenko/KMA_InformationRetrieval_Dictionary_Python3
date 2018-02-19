@@ -11,7 +11,7 @@
 #
 
 from src.indexes.abs_binary_searcher import ABSBinarySearcher
-from src.text_file_tokenizers.text_file_simplest_tokenizer import TestFileSimplestTokenizer
+from src.text_file_tokenizers.text_file_simplest_tokenizer import TextFileSimplestTokenizer
 
 from re import split
 
@@ -25,7 +25,7 @@ class PositionInvertedIndex(ABSBinarySearcher):
         if type(target_files) == list:
             self.__files = list(target_files)
             for i, file in enumerate(target_files):
-                words_gen = TestFileSimplestTokenizer(file).token_generator
+                words_gen = TextFileSimplestTokenizer(file).token_generator
                 for j, word in enumerate(words_gen):
                     self.__inverted_index.setdefault(word, [])
                     ii_list = self.__inverted_index[word]

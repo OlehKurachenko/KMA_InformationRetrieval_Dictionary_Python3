@@ -4,12 +4,11 @@ Simplest file tokenizer
 
 from re import split
 
-
-class TestFileSimplestTokenizer:
+class TextFileSimplestTokenizer:
 
     @staticmethod
     def __lazy_line_generator(filename):
-        assert type(filename) == str, TestFileSimplestTokenizer.WRONG_ARGUMENT_TYPE_MESSAGE
+        assert type(filename) == str, TextFileSimplestTokenizer.WRONG_ARGUMENT_TYPE_MESSAGE
 
         with open(filename) as file:
             for line in file:
@@ -19,9 +18,9 @@ class TestFileSimplestTokenizer:
                         yield token.lower()
 
     def __init__(self, filename):
-        assert type(filename) == str, TestFileSimplestTokenizer.WRONG_ARGUMENT_TYPE_MESSAGE
+        assert type(filename) == str, TextFileSimplestTokenizer.WRONG_ARGUMENT_TYPE_MESSAGE
 
-        self._token_generator = TestFileSimplestTokenizer.__lazy_line_generator(filename)
+        self._token_generator = TextFileSimplestTokenizer.__lazy_line_generator(filename)
 
     @property
     def token_generator(self):

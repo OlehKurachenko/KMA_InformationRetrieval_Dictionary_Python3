@@ -4,7 +4,7 @@ import time
 
 from src.dictionaries.simplest_set_dictionary import SimplestSetDictionary
 from src.dictionaries.simplest_array_dictionary import SimplestArrayDictionary
-from src.text_file_tokenizers.text_file_simplest_tokenizer import TestFileSimplestTokenizer
+from src.text_file_tokenizers.text_file_simplest_tokenizer import TextFileSimplestTokenizer
 
 
 class CLIMain:
@@ -131,7 +131,7 @@ class CLIMain:
                 if CLIMain.__printTraces:
                     print(sys.argv[0] + ": reading and adding \"" + filename + "\"...")
                     # TODO simplify using add_words
-                tfst = TestFileSimplestTokenizer(filename)
+                tfst = TextFileSimplestTokenizer(filename)
                 for word in tfst.token_generator:
                     dictionary.add_word(word)
                 if CLIMain.__printTraces:

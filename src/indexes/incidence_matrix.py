@@ -1,5 +1,5 @@
 from src.indexes.abs_binary_searcher import ABSBinarySearcher
-from src.text_file_tokenizers.text_file_simplest_tokenizer import TestFileSimplestTokenizer
+from src.text_file_tokenizers.text_file_simplest_tokenizer import TextFileSimplestTokenizer
 
 
 class IncidenceMatrix(ABSBinarySearcher):
@@ -12,7 +12,7 @@ class IncidenceMatrix(ABSBinarySearcher):
         if type(target_files) == list:
             self.__files = list(target_files)
             for i, file in enumerate(target_files):
-                words_gen = TestFileSimplestTokenizer(file).token_generator
+                words_gen = TextFileSimplestTokenizer(file).token_generator
                 for word in words_gen:
                     self.__incident_matrix.setdefault(word, [False] * len(target_files))
                     self.__incident_matrix[word][i] = True
